@@ -40,14 +40,6 @@ docker run -t -i --name VEP-DEV \
 ```
 
 ---
-## Build docker
-
-VEP official [Dockerfile](https://github.com/Ensembl/ensembl-vep/blob/release/105/docker/Dockerfile)
-```
-docker build -t vep-annotate-dev:0.1 .
-```
-
----
 ## Plugins Data
 As stored in ***hg37*** [data.list](PLUGINS-DATA/HG37/data.list):
 ```
@@ -78,13 +70,24 @@ As stored in ***hg38*** [data.list](PLUGINS-DATA/HG38/data.list):
 
 Copy the necessary databases in docker building environment:
 ```
-awk '{ print $1 }' ./PLUGINS-DATA/data.list | while read DATABASE; do cp -v $DATABASE ./PLUGINS-DATA/; done &> ./PLUGINS-DATA/data.list.LOG &
+awk '{ print $1 }' ./PLUGINS-DATA/HG37/data.list | while read DATABASE; do cp -v $DATABASE ./PLUGINS-DATA/HG37/; done &> ./PLUGINS-DATA/data.list.HG37.LOG &
+awk '{ print $1 }' ./PLUGINS-DATA/HG38/data.list | while read DATABASE; do cp -v $DATABASE ./PLUGINS-DATA/HG38/; done &> ./PLUGINS-DATA/data.list.HG38.LOG &
 ```
 check progress:
 ```
-cat ./PLUGINS-DATA/data.list.LOG
+cat ./PLUGINS-DATA/data.list.HG37.LOG
+cat ./PLUGINS-DATA/data.list.HG38.LOG
 ```
 after finish
 ```
-rm ./PLUGINS-DATA/data.list.LOG
+rm ./PLUGINS-DATA/data.list.HG37.LOG
+rm ./PLUGINS-DATA/data.list.HG38.LOG
+```
+
+---
+## Build docker
+
+VEP official [Dockerfile](https://github.com/Ensembl/ensembl-vep/blob/release/105/docker/Dockerfile)
+```
+docker build -t vep-annotate-dev:0.1 . &> DOCKER-BUILD.LOG &
 ```
