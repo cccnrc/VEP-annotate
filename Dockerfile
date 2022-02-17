@@ -9,7 +9,7 @@ ENV OPT_LIB $OPT/lib
 WORKDIR $OPT_LIB
 
 # copy required dependencies
-COPY dbSCSNV dbSCSNV
+COPY dbSCSNV/dbscSNV1.1_GRCh37.txt.gz* dbSCSNV/
 RUN pwd
 RUN ls
 RUN ls dbSCSNV | head
