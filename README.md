@@ -63,12 +63,9 @@ As stored in [data.list](PLUGINS-DATA/data.list):
 Copy the necessary databases in docker building env:
 ```
 awk '{ print $1 }' ./PLUGINS-DATA/data.list | while read DATABASE; do cp -v $DATABASE ./PLUGINS-DATA/; done &> ./PLUGINS-DATA/data.list.LOG &
-# PID:
+# PID: 27992
 ```
-
-In order to add the required data I need to be in the DIR where they are
+check progress:
 ```
-cd /media/kong/enrico/vep_data/plugins_DB
-DOCKERFILE=/media/kong/enrico/VEP-annotate/Dockerfile
-docker build -f $DOCKERFILE -t vep-annotate-dev:0.1 .
+cat ./PLUGINS-DATA/data.list.LOG
 ```

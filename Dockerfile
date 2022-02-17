@@ -9,7 +9,7 @@ ENV OPT_LIB $OPT/lib
 WORKDIR $OPT_LIB
 
 # copy required dependencies
-COPY dbSCSNV/dbscSNV1.1_GRCh37.txt.gz* dbSCSNV/
+COPY PLUGINS-DATA PLUGINS-DATA
 RUN pwd
 RUN ls
-RUN ls dbSCSNV | head
+RUN ls PLUGINS-DATA | head
