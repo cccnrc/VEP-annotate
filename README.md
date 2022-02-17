@@ -42,6 +42,7 @@ docker run -t -i --name VEP-DEV \
 ---
 ## Build docker
 
+VEP official [Dockerfile](https://github.com/Ensembl/ensembl-vep/blob/release/105/docker/Dockerfile)
 ```
 docker build -t vep-annotate-dev:0.1 .
 ```
