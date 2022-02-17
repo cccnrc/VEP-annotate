@@ -46,3 +46,9 @@ VEP official [Dockerfile](https://github.com/Ensembl/ensembl-vep/blob/release/10
 ```
 docker build -t vep-annotate-dev:0.1 .
 ```
+In order to add the required data I need to be in the DIR where they are
+```
+cd /media/kong/enrico/vep_data/plugins_DB
+DOCKERFILE=/media/kong/enrico/VEP-annotate/Dockerfile
+docker build -f $DOCKERFILE -t vep-annotate-dev:0.1 .
+```

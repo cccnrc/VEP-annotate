@@ -9,7 +9,7 @@ ENV OPT_LIB $OPT/lib
 WORKDIR $OPT_LIB
 
 # copy required dependencies
-COPY /media/kong/enrico/vep_data/plugins_DB/dbSCSNV dbSCSNV
+COPY dbSCSNV dbSCSNV
 RUN pwd
 RUN ls
 RUN ls dbSCSNV | head
