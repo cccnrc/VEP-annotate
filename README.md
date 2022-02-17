@@ -46,6 +46,26 @@ VEP official [Dockerfile](https://github.com/Ensembl/ensembl-vep/blob/release/10
 ```
 docker build -t vep-annotate-dev:0.1 .
 ```
+
+---
+## Plugins Data
+As stored in [data.list](PLUGINS-DATA/data.list):
+```
+/media/kong/enrico/vep_data/plugins_DB/CADD/hg37/InDels.tsv.gz                    # 591 MB
+/media/kong/enrico/vep_data/plugins_DB/CADD/hg37/whole_genome_SNVs.tsv.gz         # 78 GB
+/media/kong/enrico/vep_data/plugins_DB/dbSCSNV/dbscSNV1.1_GRCh37.txt.gz           # 359 MB
+/media/kong/enrico/vep_data/plugins_DB/dbSCSNV/dbscSNV1.1_GRCh37.txt.gz.tbi       # 680 KB
+/media/kong/enrico/vep_data/plugins_DB/dbNSFP_DB/dbNSFP4.1a.hg37.gz               # 31 GB
+/media/kong/enrico/vep_data/plugins_DB/dbNSFP_DB/dbNSFP4.1a.hg37.gz.tbi           # 844 KB
+/media/kong/enrico/vep_data/plugins_DB/clinvar/clinvar.04dec2021.hg37.vcf.gz      # 46 MB
+/media/kong/enrico/vep_data/plugins_DB/clinvar/clinvar.04dec2021.hg37.vcf.gz.tbi  # 312 KB
+```
+Copy the necessary databases in docker building env:
+```
+awk '{ print $1 }' ./PLUGINS-DATA/data.list | while read DATABASE; do cp -v $DATABASE ./PLUGINS-DATA/; done &> ./PLUGINS-DATA/data.list.LOG &
+# PID:
+```
+
 In order to add the required data I need to be in the DIR where they are
 ```
 cd /media/kong/enrico/vep_data/plugins_DB
