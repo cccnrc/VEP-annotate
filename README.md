@@ -118,6 +118,11 @@ cp -rv /media/kong/enrico/vep_data/Plugins ./CACHE-DATA/ &> ./CACHE-DATA/Plugins
 rm ./CACHE-DATA/Plugins.LOG
 ```
 
+Make sure VEP has read/write access to output folder
+```
+chmod a+rwx VEP-OUT    
+```
+
 ---
 ## Annotation command
 ```
