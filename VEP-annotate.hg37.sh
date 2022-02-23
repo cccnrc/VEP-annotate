@@ -5,6 +5,8 @@ VCF=$1
 NOW=$( date '+%d/%m/%Y -> %H:%M:%S' )
 
 OUTPUT_NAME="$( basename $VCF .vcf ).VEP-ANNOTATED-HG37.vcf"
+VCF_OUT_TMP=/media/kong/enrico/vep_output/${OUTPUT_NAME}
+VCF_OUT=$( dirname $VCF )/${OUTPUT_NAME}
 
 ANNOTATE_COMMAND="./vep -v \
                             --cache --offline \
@@ -28,7 +30,7 @@ echo " -------------------------------------------------------------------------
 echo
 echo -e " 0. START:\t${NOW}"
 echo -e " 1. VCF:\t${VCF}"
-echo -e " 2. OUT:\t/media/kong/enrico/vep_output/${OUTPUT_NAME}"
+echo -e " 2. OUT:\t${VCF_OUT}"
 echo -e " 3. VEP:\t${ANNOTATE_COMMAND}"
 echo
 
@@ -51,9 +53,21 @@ docker run \
 
 wait
 
+echo
+if [ -s $VCF_OUT_TMP ]; then
+  mv $VCF_OUT_TMP $VCF_OUT
+  echo -e " - moving ${VCF_OUT_TMP} to: \t${VCF_OUT}"
+else
+  echo " !!! ERROR !!!: output VCF not found:\t${VCF_OUT_TMP}"
+  echo "  ... exiting ... "
+  exit 1
+fi
+echo
+
 NOW=$( date '+%d/%m/%Y -> %H:%M:%S' )
 echo
 echo "ANALYSIS COMPLETED !!! @ ${NOW}"
+echo "  -> ${VCF_OUT}"
 echo " -------------------------------------------------------------------------------------------------------- "
 echo
 
