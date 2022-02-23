@@ -166,7 +166,7 @@ bash /media/kong/enrico/VEP-annotate/VEP-annotate.hg37.sh $VCF
 VEP official [Dockerfile](https://github.com/Ensembl/ensembl-vep/blob/release/105/docker/Dockerfile)
 ```
 docker build -t vep-annotate-dev:0.1 . &>DOCKER-BUILD.LOG &
-PID=1370
+PID=33539
 ```
 check if it is still running:
 ```

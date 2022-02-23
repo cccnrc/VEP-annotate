@@ -56,7 +56,8 @@ wait
 echo
 if [ -s $VCF_OUT_TMP ]; then
   mv $VCF_OUT_TMP $VCF_OUT
-  echo -e " - moving ${VCF_OUT_TMP} to: \t${VCF_OUT}"
+  echo -e " - moving input:\t${VCF_OUT_TMP}"
+  echo -e "   - to output:\t${VCF_OUT}"
 else
   echo " !!! ERROR !!!: output VCF not found:\t${VCF_OUT_TMP}"
   echo "  ... exiting ... "
