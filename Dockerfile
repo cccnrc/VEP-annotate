@@ -14,5 +14,10 @@ WORKDIR $OPT_LIB
 COPY PLUGINS-DATA PLUGINS-DATA
 COPY CACHE-DATA /opt/vep/.vep
 
+### allow VEP to r/w
+RUN chown -R vep:vep $OPT_LIB
+RUN mkdir /OUT
+RUN chown -R vep:vep /OUT
+
 # go to executables directory
 WORKDIR $OPT_VEP_SRC/ensembl-vep

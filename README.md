@@ -126,7 +126,7 @@ chmod a+rwx VEP-OUT
 ---
 ## Annotation command
 ```
-VCF=
+VCF=/media/kong/enrico/SOMATIC-KIDNEY/ROCHE-M.KIDNEY-somatic.merged.cleaned.vcf
 
 ANNOTATE_COMMAND="./vep -v \
                             --cache --offline \
@@ -148,8 +148,9 @@ run the command:
 docker run \
      --name VEP-ANNOTATION \
      --rm \
+     -it \
      -v $( dirname $VCF ):/VCF \
-     -v VEP-OUT:/OUT \
+     -v VEP-OUT:/opt/vep/OUT:Z \
      vep-annotate-dev:0.1 \
       bash -c "${ANNOTATE_COMMAND}"
 ```
@@ -159,7 +160,7 @@ docker run \
 VEP official [Dockerfile](https://github.com/Ensembl/ensembl-vep/blob/release/105/docker/Dockerfile)
 ```
 docker build -t vep-annotate-dev:0.1 . &>DOCKER-BUILD.LOG &
-PID=32039
+PID=9261
 ```
 check if it is still running:
 ```
