@@ -137,11 +137,11 @@ ANNOTATE_COMMAND="./vep -v \
                             --everything \
                             --pick \
                             --input_file /VCF/$( basename $VCF ) \
-                            --plugin dbscSNV,/opt/vep-annotate/PLUGINS-DATA/HG37/dbscSNV1.1_GRCh37.txt.gz \
-                            --plugin CADD,/opt/vep-annotate/PLUGINS-DATA/HG37/whole_genome_SNVs.tsv.gz,/opt/vep-annotate/PLUGINS-DATA/HG37/InDels.tsv.gz \
-                            --custom /opt/vep-annotate/PLUGINS-DATA/HG37/clinvar.04dec2021.hg37.vcf.gz,ClinVar,vcf,exact,0,CLNSIG,CLNREVSTAT,CLNDN,CLNDISDB \
-                            --plugin dbNSFP,/opt/vep-annotate/PLUGINS-DATA/HG37/dbNSFP4.1a.hg37.gz,LRT_score,LRT_pred,GERP++_RS,MutationTaster_pred,MutationTaster_score,MutationAssessor_pred,MutationAssessor_score,FATHMM_score,FATHMM_pred,1000Gp3_AC,1000Gp3_AF,1000Gp3_AFR_AC,1000Gp3_AFR_AF,1000Gp3_EUR_AC,1000Gp3_EUR_AF,1000Gp3_AMR_AC,1000Gp3_AMR_AF,1000Gp3_EAS_AC,1000Gp3_EAS_AF,1000Gp3_SAS_AC,1000Gp3_SAS_AF,UK10K_AF,ESP6500_AA_AF,ESP6500_EA_AF,gnomAD_exomes_POPMAX_AF,gnomAD_exomes_POPMAX_nhomalt,gnomAD_genomes_POPMAX_AF,gnomAD_genomes_POPMAX_nhomalt,GTEx_V8_gene,GTEx_V8_tissue,Geuvadis_eQTL_target_gene,Polyphen2_HDIV_score,Polyphen2_HDIV_pred,Polyphen2_HVAR_score,Polyphen2_HVAR_pred,ExAC_AC,ExAC_AF,ExAC_Adj_AF,ExAC_AFR_AC,ExAC_AFR_AF,ExAC_AMR_AC,ExAC_AMR_AF,ExAC_EAS_AC,ExAC_EAS_AF,ExAC_FIN_AC,ExAC_FIN_AF,ExAC_NFE_AC,ExAC_NFE_AF,ExAC_SAS_AC,ExAC_SAS_AF,REVEL_score,REVEL_rankscore,clinvar_id,clinvar_clnsig,clinvar_trait,clinvar_review,clinvar_hgvs,clinvar_var_source,clinvar_MedGen_id,clinvar_OMIM_id,clinvar_Orphanet_id,CADD_phred,ExAC_Adj_AC,gnomAD_exomes_AN,gnomAD_exomes_AC,gnomAD_genomes_AN,gnomAD_genomes_AC,gnomAD_exomes_controls_AC,gnomAD_exomes_controls_AN,gnomAD_exomes_AFR_AF,gnomAD_exomes_AMR_AF,gnomAD_exomes_ASJ_AF,gnomAD_exomes_EAS_AF,gnomAD_exomes_FIN_AF,gnomAD_exomes_NFE_AF,gnomAD_exomes_SAS_AF,gnomAD_exomes_controls_AF,gnomAD_genomes_AFR_AF,gnomAD_genomes_AMR_AF,gnomAD_genomes_ASJ_AF,gnomAD_genomes_EAS_AF,gnomAD_genomes_FIN_AF,gnomAD_genomes_NFE_AF,genename \
-                             -o /OUT/$( basename $VCF .vcf ).HG37-ANNOTATED.vcf"
+                            --plugin dbscSNV,/opt/vep-annotate/lib/PLUGINS-DATA/HG37/dbscSNV1.1_GRCh37.txt.gz \
+                            --plugin CADD,/opt/vep-annotate/lib/PLUGINS-DATA/HG37/whole_genome_SNVs.tsv.gz,/opt/vep-annotate/lib/PLUGINS-DATA/HG37/InDels.tsv.gz \
+                            --custom /opt/vep-annotate/lib/PLUGINS-DATA/HG37/clinvar.04dec2021.hg37.vcf.gz,ClinVar,vcf,exact,0,CLNSIG,CLNREVSTAT,CLNDN,CLNDISDB \
+                            --plugin dbNSFP,/opt/vep-annotate/lib/PLUGINS-DATA/HG37/dbNSFP4.1a.hg37.gz,LRT_score,LRT_pred,GERP++_RS,MutationTaster_pred,MutationTaster_score,MutationAssessor_pred,MutationAssessor_score,FATHMM_score,FATHMM_pred,1000Gp3_AC,1000Gp3_AF,1000Gp3_AFR_AC,1000Gp3_AFR_AF,1000Gp3_EUR_AC,1000Gp3_EUR_AF,1000Gp3_AMR_AC,1000Gp3_AMR_AF,1000Gp3_EAS_AC,1000Gp3_EAS_AF,1000Gp3_SAS_AC,1000Gp3_SAS_AF,UK10K_AF,ESP6500_AA_AF,ESP6500_EA_AF,gnomAD_exomes_POPMAX_AF,gnomAD_exomes_POPMAX_nhomalt,gnomAD_genomes_POPMAX_AF,gnomAD_genomes_POPMAX_nhomalt,GTEx_V8_gene,GTEx_V8_tissue,Geuvadis_eQTL_target_gene,Polyphen2_HDIV_score,Polyphen2_HDIV_pred,Polyphen2_HVAR_score,Polyphen2_HVAR_pred,ExAC_AC,ExAC_AF,ExAC_Adj_AF,ExAC_AFR_AC,ExAC_AFR_AF,ExAC_AMR_AC,ExAC_AMR_AF,ExAC_EAS_AC,ExAC_EAS_AF,ExAC_FIN_AC,ExAC_FIN_AF,ExAC_NFE_AC,ExAC_NFE_AF,ExAC_SAS_AC,ExAC_SAS_AF,REVEL_score,REVEL_rankscore,clinvar_id,clinvar_clnsig,clinvar_trait,clinvar_review,clinvar_hgvs,clinvar_var_source,clinvar_MedGen_id,clinvar_OMIM_id,clinvar_Orphanet_id,CADD_phred,ExAC_Adj_AC,gnomAD_exomes_AN,gnomAD_exomes_AC,gnomAD_genomes_AN,gnomAD_genomes_AC,gnomAD_exomes_controls_AC,gnomAD_exomes_controls_AN,gnomAD_exomes_AFR_AF,gnomAD_exomes_AMR_AF,gnomAD_exomes_ASJ_AF,gnomAD_exomes_EAS_AF,gnomAD_exomes_FIN_AF,gnomAD_exomes_NFE_AF,gnomAD_exomes_SAS_AF,gnomAD_exomes_controls_AF,gnomAD_genomes_AFR_AF,gnomAD_genomes_AMR_AF,gnomAD_genomes_ASJ_AF,gnomAD_genomes_EAS_AF,gnomAD_genomes_FIN_AF,gnomAD_genomes_NFE_AF,genename \
+                             -o /opt/vep/src/ensembl-vep/examples/$( basename $VCF .vcf ).HG37-ANNOTATED.vcf"
 ```
 run the command:
 ```
@@ -150,7 +150,7 @@ docker run \
      --rm \
      -it \
      -v $( dirname $VCF ):/VCF \
-     -v VEP-OUT:/opt/vep/OUT:Z \
+     -v VEP-OUT:/opt/vep/src/ensembl-vep/examples:Z \
      vep-annotate-dev:0.1 \
       bash -c "${ANNOTATE_COMMAND}"
 ```

@@ -16,6 +16,7 @@ COPY CACHE-DATA /opt/vep/.vep
 
 ### allow VEP to r/w
 RUN chown -R vep:vep $OPT_LIB
+RUN chown -R vep:vep $OPT_VEP
 RUN mkdir /OUT
 RUN chown -R vep:vep /OUT
 
