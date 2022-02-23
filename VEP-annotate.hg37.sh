@@ -4,7 +4,7 @@ VCF=$1
 
 NOW=$( date '+%d/%m/%Y -> %H:%M:%S' )
 
-OUTPUT_NAME="$( basename $VCF .vcf ).VEP-ANNOTATED.vcf"
+OUTPUT_NAME="$( basename $VCF .vcf ).VEP-ANNOTATED-HG37.vcf"
 
 ANNOTATE_COMMAND="./vep -v \
                             --cache --offline \
