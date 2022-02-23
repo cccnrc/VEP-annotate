@@ -36,7 +36,7 @@ echo
 
 
 docker run \
-     --name VEP \
+     --name VEP-ANNOTATE-HG37-${RANDOM} \
      --rm \
      -v /media/kong/enrico/vep_data:/opt/vep/.vep \
      -v $( dirname $VCF ):/VCF \
@@ -45,7 +45,7 @@ docker run \
      -v /media/kong/enrico/vep_data/plugins_DB/dbNSFP_DB:/dbNSFP \
      -v /media/kong/enrico/vep_data/plugins_DB/clinvar:/clinvar \
      -v /media/kong/enrico/vep_data/plugins_DB/CADD/hg37:/CADD \
-     ensemblorg/ensembl-vep:release_103 \
+     ensemblorg/ensembl-vep \
       bash -c "${ANNOTATE_COMMAND}"
 
 
